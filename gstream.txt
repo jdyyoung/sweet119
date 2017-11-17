@@ -1,0 +1,111 @@
+从插件下载链接点进去，Download
+
+You can find source releases of gst-plugins-base in the gst-plugins-base download directory. 
+
+修改路径至src
+
+进入即可看到Gsstream
+
+失败configure: error: Could not find bison
+try this：sudo apt-get install bison 
+   result : success
+
+失败：configure:error: Could not find flex
+sudo apt-get install flex 成功
+
+
+~/Downloads/gst-plugins-base-1.10.4$configure 
+~/Downloads/gst-plugins-good-1.10.4$configure 
+No package 'gstreamer-1.0' found
+
+find / -name "gstreamer-1.0"
+然后各种删除gstreamer-1.0
+cd gstreamer-1.10.4/
+
+./configure
+
+sudo make 
+
+sudo make install
+
+再安装插件：
+cd gst-plugins-base-1.10.4/
+
+./configure
+
+sudo make 
+
+sudo make install
+
+
+
+
+configure: error: no gstreamer-1.0 >= 1.10.0 (GStreamer) found
+
+configure: Requested 'gstreamer-1.0 >= 1.10.0' but version of GStreamer is 1.8.3
+configure: error: no gstreamer-1.0 >= 1.10.0 (GStreamer) found
+
+
+Error compiling a package: "configure: error: no gstreamer-1.0 >= 1.0.0" - Ask Ubuntu
+https://askubuntu.com/questions/384059/error-compiling-a-package-configure-error-no-gstreamer-1-0-1-0-0
+
+
+ou can check the version of some packages with apt-cache policy. Example: apt-cache policy libgstreamer1.0-dev
+
+
+apt-cache policy libgstreamer1.0-dev
+
+
+WARNING: unexpected liborc library version 0.4.25 is being picked up by /usr/local/bin/orcc, which is version 0.4.26. This might be because orc was installed from source and is also installed via packages, and liborc from the wrong prefix is used. Check your system setup.
+Makefile:1481: recipe for target 'tmp-orc.c' failed
+make[4]: *** [tmp-orc.c] Error 1
+make[4]: Leaving directory '/home/young/Downloads/gst-plugins-base-1.10.4/gst-libs/gst/audio'
+Makefile:866: recipe for target 'audio' failed
+make[3]: *** [audio] Error 2
+make[3]: Leaving directory '/home/young/Downloads/gst-plugins-base-1.10.4/gst-libs/gst'
+Makefile:563: recipe for target 'all-recursive' failed
+make[2]: *** [all-recursive] Error 1
+make[2]: Leaving directory '/home/young/Downloads/gst-plugins-base-1.10.4/gst-libs'
+Makefile:696: recipe for target 'all-recursive' failed
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory '/home/young/Downloads/gst-plugins-base-1.10.4'
+Makefile:625: recipe for target 'all' failed
+make: *** [all] Error 2
+不安装orc 0.4.26
+
+删除全部libgstbase 
+从头安装gstreamer
+安装base插件
+
+//-----------------------------------------------------------------------------
+~/Downloads/gst-libav-1.10.4$configure
+yasm/nasm not found or too old. Use --disable-yasm for a crippled build.
+
+If you think configure made a mistake, make sure you are using the latest
+version from Git.  If the latest version fails, report the problem to the
+ffmpeg-user@ffmpeg.org mailing list or IRC #ffmpeg on irc.freenode.net.
+Include the log file "config.log" produced by configure as this will help
+solve the problem.
+config.status: error: Failed to configure embedded Libav tree
+
+
+//------------------------------------------------------------------------------------
+checking whether to enable AMD64 as(1) feature detection... yes
+checking for gpg-error-config... no
+checking for GPG Error - version >= 1.25... no
+configure: error: libgpg-error is needed.
+                See ftp://ftp.gnupg.org/gcrypt/libgpg-error/ .
+
+
+Makefile:871: recipe for target 'mkerrcodes' failed
+make[2]: *** [mkerrcodes] Error 1
+make[2]: Leaving directory '/home/young/Downloads/libgpg-error-1.8/src'
+Makefile:317: recipe for target 'all-recursive' failed
+make[1]: *** [all-recursive] Error 1
+make[1]: Leaving directory '/home/young/Downloads/libgpg-error-1.8'
+Makefile:247: recipe for target 'all' failed
+make: *** [all] Error 2
+
+
+
+

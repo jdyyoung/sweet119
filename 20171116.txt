@@ -1,0 +1,118 @@
+//--------------------/etc/asound.conf
+
+
+ALSA --- amixer控制声卡驱动实现Line-in功能 - CSDN博客
+http://blog.csdn.net/yimiyangguang1314/article/details/7755815
+
+
+Linux音频配置文件asound.conf的了解 - CSDN博客
+http://blog.csdn.net/lp542718520/article/details/51865654
+
+ALSA配置文件(alsa.conf, asoundrc, asound.conf)及其自动加载  And   HDMI Adiuo_努力加贝_新浪博客
+http://blog.sina.com.cn/s/blog_a04184c101010kry.html
+
+//-------------------------------------------------
+能运行发不出声音？
+~$gst-inspect-1.0  alsasink   //为什么定位问题？
+没有那样的组件或插件‘alsasinkcd’
+
+缺少libgstalsa.so库文件
+
+重新卸载安装gst-plugins-base-1.10.4
+再用~$gst-inspect-1.0  alsasink 测试
+gst-play-1.0  ~/sugr/build/data/alarm_short.wav 测试
+OK！
+
+//--------------------------------------------Build with a Wake Word Detector-------------------------------
+cmake /home/young/sugr/avs-device-sdk/ -DSENSORY_KEY_WORD_DETECTOR=ON -DSENSORY_KEY_WORD_DETECTOR_LIB_PATH=/home/young/sugr/avs-device-sdk/KWD/Sensory/lib/libsnsr.a -DSENSORY_KEY_WORD_DETECTOR_INCLUDE_DIR=/home/young/sugr/avs-device-sdk/KWD/Sensory/include
+
+//----------------------------------------Build with an implementation of MediaPlayer --------------------------------
+cmake /home/young/sugr/avs-device-sdk -DGSTREAMER_MEDIA_PLAYER=ON -DCMAKE_PREFIX_PATH=/usr/local/lib/
+
+//----------------------------------------Build with PortAudio (Required to Run the Sample App)---------------------------
+cmake /home/young/sugr/avs-device-sdk -DPORTAUDIO=ON -DPORTAUDIO_LIB_PATH=/home/young/Downloads/_install/lib/libportaudio.a -DPORTAUDIO_INCLUDE_DIR=/home/young/Downloads/_install/include/
+
+//------------------------------------Build for Generic Linux / macOS-----------------------------------------------
+cmake /home/young/sugr/avs-device-sdk -DSENSORY_KEY_WORD_DETECTOR=ON -DSENSORY_KEY_WORD_DETECTOR_LIB_PATH=/home/young/sugr/avs-device-sdk/KWD/Sensory/lib/libsnsr.a -DSENSORY_KEY_WORD_DETECTOR_INCLUDE_DIR=/home/young/sugr/avs-device-sdk/KWD/Sensory/include -DGSTREAMER_MEDIA_PLAYER=ON -DCMAKE_PREFIX_PATH=/usr/local/lib/ -DPORTAUDIO=ON -DPORTAUDIO_LIB_PATH=/home/young/Downloads/_install/lib/libportaudio.a -DPORTAUDIO_INCLUDE_DIR=/home/young/Downloads/_install/include/
+
+//----------------------填充修改Json----------------------------------------
+python AuthServer/AuthServer.py
+Open your favorite browser and navigate to: http://localhost:3000
+
+make
+
+
+//------------------Run the Sample App----------------------------------
+cd ~/sugr/buid
+//没有唤醒词的
+TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+
+//有唤醒词的
+TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json /home/young/sugr/avs-device-sdk/KWD/inputs/SensoryModels/  DEBUG9
+
+
+
+
+//---------------------------------error---------------------------------------------------------------------
+~/sugr/build/SampleApp/src$TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+#############################
+#       Connecting...       #
+#############################
+
+########################################
+#       Alexa is currently idle!       #
+########################################
+
+ALSA lib pcm.c:2266:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2266:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2266:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib pcm_route.c:867:(find_matching_chmap) Found no matching channel map
+ALSA lib pcm_route.c:867:(find_matching_chmap) Found no matching channel map
+ALSA lib pcm_route.c:867:(find_matching_chmap) Found no matching channel map
+ALSA lib pcm_route.c:867:(find_matching_chmap) Found no matching channel map
+Failed to create SensoryKeywWordDetector!
+#####################################
+#       Client not connected!       #
+#####################################
+
+Failed to initialize SampleApplication
+Failed to create to SampleApplication!
+~/sugr/build/SampleApp/src$
+
+处理：
+~/sugr/build/SampleApp/src$TZ=UTC ./SampleApp 
+USAGE: ./SampleApp <path_to_AlexaClientSDKConfig.json> <path_to_inputs_folder> [log_level]
+~/sugr/build/SampleApp/src$
+
+//打开...SampleApp/src/SampleApplication.cpp 
+~/sugr/build/SampleApp/src$ vi ~/sugr/avs-device-sdk/SampleApp/src/SampleApplication.cpp 
+....
+384 #elif defined(KWD_SENSORY)
+385     m_keywordDetector = kwd::SensoryKeywordDetector::create(
+386         sharedDataStream,
+387         compatibleAudioFormat,
+388         {keywordObserver},
+389         std::unordered_set<
+390             std::shared_ptr<alexaClientSDK::avsCommon::sdkInterfaces::KeyWordDetectorStateObserverInterface>>(),
+391         pathToInputFolder + "/spot-alexa-rpi-31000.snsr");
+392     if (!m_keywordDetector) {
+393         alexaClientSDK::sampleApp::ConsolePrinter::simplePrint("Failed to create SensoryKeywWordDetector!");
+394         return false;
+395     }
+396 #endif
+.....
+保证
+~/sugr/build/SampleApp/src$ ls ~/sugr/avs-device-sdk/KWD/inputs/SensoryModels/ 路径下的唤醒词文件名与/spot-alexa-rpi-31000.snsr 一致
+
+再执行：
+TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json /home/young/sugr/avs-device-sdk/KWD/inputs/SensoryModels/  DEBUG9
+
+
+//----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+

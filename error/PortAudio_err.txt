@@ -1,0 +1,168 @@
+~/sugr/build/SampleApp/src$TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+Running app with log level: DEBUG9
+2017-11-15 03:54:44.137 [  1] I ConfigurationNode:initializeSuccess
+2017-11-15 03:54:44.141 [  1] 9 MediaPlayer:createCalled
+2017-11-15 03:54:44.175 [  1] 9 MediaPlayer:createCalled
+2017-11-15 03:54:44.176 [  1] 9 MediaPlayer:createCalled
+2017-11-15 03:54:44.184 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-15 03:54:44.184 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-15 03:54:44.184 [  1] 9 SpeechSynthesizer:addObserver:observer=0x277d468
+2017-11-15 03:54:44.185 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-15 03:54:44.185 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-15 03:54:44.185 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-15 03:54:44.186 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-15 03:54:44.187 [  1] 9 AlertScheduler:setTimerForNextAlertLocked
+2017-11-15 03:54:44.187 [  1] I AlertScheduler:executeScheduleNextAlertForRendering::no work to do.
+2017-11-15 03:54:44.188 [  3] 1 AlertsCapabilityAgent:executeOnConnectionStatusChanged:status=DISCONNECTED,reason=ACL_CLIENT_REQUEST
+2017-11-15 03:54:44.189 [  1] 9 MediaPlayer:getSpeakerTypeCalled
+2017-11-15 03:54:44.190 [  1] 9 MediaPlayer:getSpeakerTypeCalled
+2017-11-15 03:54:44.190 [  1] 9 MediaPlayer:getSpeakerTypeCalled
+2017-11-15 03:54:44.190 [  1] 0 SpeakerManager:mapCreated:numAvsSynced=2,numLocal=1
+2017-11-15 03:54:44.190 [  1] 1 AudioPlayer:addObserver
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=SpeechSynthesizer,name=Speak,handler=0x27a2130,policy=BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=AudioPlayer,name=ClearQueue,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=AudioPlayer,name=Stop,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=AudioPlayer,name=Play,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=SpeechRecognizer,name=ExpectSpeech,handler=0x27a1450,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=SpeechRecognizer,name=StopCapture,handler=0x27a1450,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=Alerts,name=DeleteAlert,handler=0x27a3ef0,policy=NON_BLOCKING
+2017-11-15 03:54:44.191 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=Alerts,name=SetAlert,handler=0x27a3ef0,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=System,name=SetEndpoint,handler=0x2813bf0,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=System,name=ResetUserInactivity,handler=0x27a1108,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=Speaker,name=SetMute,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=Speaker,name=AdjustVolume,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=Speaker,name=SetVolume,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] 9 TemplateRuntime:getConfiguration
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=TemplateRuntime,name=RenderPlayerInfo,handler=0x28132a0,policy=NON_BLOCKING
+2017-11-15 03:54:44.192 [  1] I DirectiveRouter:addDirectiveHandlers:action=added,namespace=TemplateRuntime,name=RenderTemplate,handler=0x28132a0,policy=NON_BLOCKING
+2017-11-15 03:54:46.628 [  4] 0 HttpPost:doPostSucceeded:code=200
+2017-11-15 03:54:46.628 [  4] 0 AuthDelegate:handleLwaResponseSucceeded:expiresInSeconds=3600
+2017-11-15 03:54:46.628 [  4] 0 AuthDelegate:onAuthStateChangeCalled:state=1,error=0
+2017-11-15 03:54:46.628 [  1] 0 MessageRouter:connectionStatusChanged:reason=ACL_CLIENT_REQUEST,newStatus=PENDING
+2017-11-15 03:54:46.629 [  1] 0 HTTP2StreamPool:getStream:streamId=1,numAcquiredStreams=1
+2017-11-15 03:54:46.630 [  5] 9 PostConnectSynchronize:Entering postConnectLoop thread
+2017-11-15 03:54:46.630 [  6] 9 SpeakerManager:provideStateCalled
+2017-11-15 03:54:46.631 [  7] 9 SpeakerManager:executeProvideStateCalled
+2017-11-15 03:54:46.631 [  7] 9 MediaPlayer:getSpeakerSettingsCalled
+2017-11-15 03:54:46.631 [  8] 0 ContextManager:updateStateLocked:action=updatedState,state={"wakeword" \: ""},namespace=SpeechRecognizer,name=RecognizerState
+2017-11-15 03:54:46.631 [  2] 9 MediaPlayer:handleGetSpeakerSettingsCalled
+2017-11-15 03:54:46.631 [  6] 0 AudioPlayer:provideState:stateRequestToken=1
+2017-11-15 03:54:46.631 [  6] 9 SpeechSynthesizer:provideState:token=1
+2017-11-15 03:54:46.631 [  7] 9 MediaPlayer:getSpeakerSettingsCalled
+2017-11-15 03:54:46.631 [  2] 9 MediaPlayer:handleGetSpeakerSettingsCalled
+2017-11-15 03:54:46.631 [  a] 0 AudioPlayer:executeProvideState:sendToken=true,stateRequestToken=1
+2017-11-15 03:54:46.631 [  7] 9 SpeakerManager:validateSpeakerSettingsConsistencyResult:consistent=true
+2017-11-15 03:54:46.631 [  9] 0 SpeechSynthesizer:executeProvideState:stateRequestToken=1
+2017-11-15 03:54:46.631 [  7] 9 SpeakerManager:validateSpeakerSettings:volume=100,mute=false
+2017-11-15 03:54:46.632 [  a] 0 ContextManager:updateStateLocked:action=updatedState,state={"token"\:""\,"offsetInMilliseconds"\:0\,"playerActivity"\:"IDLE"},namespace=AudioPlayer,name=PlaybackState
+2017-11-15 03:54:46.632 [  3] 1 AlertsCapabilityAgent:executeOnConnectionStatusChanged:status=PENDING,reason=ACL_CLIENT_REQUEST
+2017-11-15 03:54:46.632 [  7] 0 ContextManager:updateStateLocked:action=updatedState,state={"volume"\:100\,"muted"\:false},namespace=Speaker,name=VolumeState
+#############################
+#       Connecting...       #
+#############################
+
+2017-11-15 03:54:46.632 [  9] 0 ContextManager:updateStateLocked:action=updatedState,state={"token"\:""\,"offsetInMilliseconds"\:0\,"playerActivity"\:"FINISHED"},namespace=SpeechSynthesizer,name=SpeechState
+2017-11-15 03:54:46.632 [  6] 0 ContextManager:buildContextSuccessful:context={"context"\:[{"header"\:{"namespace"\:"Speaker"\,"name"\:"VolumeState"}\,"payload"\:{"volume"\:100\,"muted"\:false}}\,{"header"\:{"namespace"\:"SpeechRecognizer"\,"name"\:"RecognizerState"}\,"payload"\:{"wakeword"\:""}}\,{"header"\:{"namespace"\:"AudioPlayer"\,"name"\:"PlaybackState"}\,"payload"\:{"token"\:""\,"offsetInMilliseconds"\:0\,"playerActivity"\:"IDLE"}}\,{"header"\:{"namespace"\:"SpeechSynthesizer"\,"name"\:"SpeechState"}\,"payload"\:{"token"\:""\,"offsetInMilliseconds"\:0\,"playerActivity"\:"FINISHED"}}\,{"header"\:{"namespace"\:"Alerts"\,"name"\:"AlertsState"}\,"payload"\:{"allAlerts"\:[]\,"activeAlerts"\:[]}}]}
+2017-11-15 03:54:46.633 [  6] 0 EventBuilder:buildJsonEventString:messageId=00f9f6c2-b60a-4b43-a1af-238208f296ec,namespace=System,name=SynchronizeState
+2017-11-15 03:54:46.633 [  6] 0 PostConnectSynchronize:onContextAvailable : Send PostConnectMessage to transport
+2017-11-15 03:54:46.633 [  6] 9 HTTP2Transport:enqueueRequest
+2017-11-15 03:54:48.115 [  b] 0 HTTP2Stream:receivedRequestId:value=x-amzn-requestid\: 069d50fffe2fb9be-00006d7f-000244d2-7c867a5dc660e7eb-42c8b591-1
+2017-11-15 03:54:48.115 [  b] 0 HTTP2Transport:processNextOutgoingMessage
+2017-11-15 03:54:48.115 [  b] 0 HTTP2StreamPool:getStream:streamId=3,numAcquiredStreams=2
+2017-11-15 03:54:48.116 [  b] 9 HTTP2Transport:insertActiveStream:handle=0x7f3a600ef2a0
+2017-11-15 03:54:49.576 [  b] 0 HTTP2Stream:receivedRequestId:value=x-amzn-requestid\: 069d50fffe2fb9be-00006d7f-000244d2-7c867a5dc660e7eb-42c8b591-3
+2017-11-15 03:54:49.576 [  b] 0 PostConnectSynchronize:onSendCompleted:status=SUCCESS_NO_CONTENT
+2017-11-15 03:54:49.576 [  5] 9 PostConnectSynchronize:Exiting postConnectLoop thread
+2017-11-15 03:54:49.576 [  b] 0 PostConnectSynchronize:onConnected()
+2017-11-15 03:54:49.576 [  b] 0 MessageRouter:connectionStatusChanged:reason=ACL_CLIENT_REQUEST,newStatus=CONNECTED
+2017-11-15 03:54:49.576 [  b] 0 HTTP2Transport:cleanupFinishedStream:streamId=3,result=204
+2017-11-15 03:54:49.576 [  b] 0 HTTP2StreamPool:releaseStream:streamId=3,numAcquiredStreams=1
+2017-11-15 03:54:49.577 [  b] 0 CurlEasyHandleWrapper:reset:responseCode=HTTP_RESPONSE_SUCCESS_NO_CONTENT
+2017-11-15 03:54:49.577 [  1] 9 SpeakerManager:addSpeakerManagerObserverCalled
+2017-11-15 03:54:49.577 [  1] 9 SpeakerManager:addSpeakerManagerObserver:observer=0x2649298
+Failed to open PortAudio default stream
+Failed to initialize PortAudioMicrophoneWrapper
+Failed to create PortAudioMicrophoneWrapper!
+2017-11-15 03:54:49.578 [  1] I DirectiveSequencer:doShutdown
+########################################
+#       Alexa is currently idle!       #
+########################################
+
+2017-11-15 03:54:49.578 [  3] 1 AlertsCapabilityAgent:executeOnConnectionStatusChanged:status=CONNECTED,reason=ACL_CLIENT_REQUEST
+2017-11-15 03:54:49.578 [  1] 9 TemplateRuntime:getConfiguration
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=TemplateRuntime,name=RenderPlayerInfo,handler=0x28132a0,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=TemplateRuntime,name=RenderTemplate,handler=0x28132a0,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=Speaker,name=SetMute,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=Speaker,name=AdjustVolume,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=Speaker,name=SetVolume,handler=0x2812900,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=Alerts,name=DeleteAlert,handler=0x27a3ef0,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=Alerts,name=SetAlert,handler=0x27a3ef0,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=System,name=SetEndpoint,handler=0x2813bf0,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=AudioPlayer,name=ClearQueue,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=AudioPlayer,name=Stop,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=AudioPlayer,name=Play,handler=0x27a2e10,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=SpeechSynthesizer,name=Speak,handler=0x27a2130,policy=BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=SpeechRecognizer,name=ExpectSpeech,handler=0x27a1450,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=SpeechRecognizer,name=StopCapture,handler=0x27a1450,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:removeDirectiveHandlers:action=removed,namespace=System,name=ResetUserInactivity,handler=0x27a1108,policy=NON_BLOCKING
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x28132a0
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x2812900
+2017-11-15 03:54:49.579 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x27a3ef0
+2017-11-15 03:54:49.580 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x2813bf0
+2017-11-15 03:54:49.580 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x27a2e10
+2017-11-15 03:54:49.580 [  1] 0 AudioPlayer:onDeregistered
+2017-11-15 03:54:49.580 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x27a2130
+2017-11-15 03:54:49.580 [  1] 9 SpeechSynthesizer:onDeregistered
+2017-11-15 03:54:49.580 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x27a1450
+2017-11-15 03:54:49.580 [  a] 1 AudioPlayer:executeStop:playNextItem=false,m_currentActivity=IDLE
+2017-11-15 03:54:49.580 [  1] I DirectiveRouter:onDeregisteredCalled:handler=0x27a1108
+2017-11-15 03:54:49.580 [  1] 0 ContextManager:setStateProvider:action=removedStateProvider,namespace=Speaker,name=VolumeState
+2017-11-15 03:54:49.580 [  1] 1 AudioPlayer:removeObserver
+2017-11-15 03:54:49.581 [  1] 1 AudioPlayer:executeStop:playNextItem=false,m_currentActivity=IDLE
+2017-11-15 03:54:49.581 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-15 03:54:49.581 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-15 03:54:49.581 [  1] 0 ContextManager:setStateProvider:action=removedStateProvider,namespace=AudioPlayer,name=PlaybackState
+2017-11-15 03:54:49.581 [  1] 9 SpeechSynthesizer:doShutdown
+2017-11-15 03:54:49.581 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-15 03:54:49.581 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-15 03:54:49.582 [  1] 9 AlertsCapabilityAgent:releaseChannel
+2017-11-15 03:54:49.582 [  1] 0 MessageRouter:connectionStatusChanged:reason=ACL_CLIENT_REQUEST,newStatus=DISCONNECTED
+2017-11-15 03:54:49.583 [  1] 0 PostConnectSynchronize:PostConnectSynchronizer::doShutdown().
+#####################################
+#       Client not connected!       #
+#####################################
+
+2017-11-15 03:54:49.679 [  b] 0 HTTP2StreamPool:releaseStream:streamId=1,numAcquiredStreams=0
+2017-11-15 03:54:49.679 [  b] 0 PostConnectSynchronize:onDisconnected()
+2017-11-15 03:54:49.679 [  b] 0 PostConnectSynchronize:PostConnectSynchronizer::doShutdown().
+2017-11-15 03:54:49.682 [  c] I CertifiedSender:CertifiedSender worker thread done.  exiting mainloop.
+2017-11-15 03:54:49.685 [  1] 9 MediaPlayer:~MediaPlayerCalled
+2017-11-15 03:54:49.685 [  1] 9 MediaPlayer:resetPipeline
+2017-11-15 03:54:49.686 [  1] 9 MediaPlayer:~MediaPlayerCalled
+2017-11-15 03:54:49.686 [  1] 9 MediaPlayer:resetPipeline
+Failed to initialize SampleApplication
+Failed to create to SampleApplication!
+
+处理：
+//1.重新编译portaudio
+cd portaudio
+./configure  --without-jack --prefix=/home/Downloads/_install   //--prefix= 配置到指定路径，规范管理调用，可使用tree查看
+make   //不能sudo make
+make install //这样就安装到--prefix指定的路径
+
+//2.重新进行总的编译
+cd ~/sugr/bulid
+cmake /home/young/sugr/avs-device-sdk -DGSTREAMER_MEDIA_PLAYER=ON -DCMAKE_PREFIX_PATH=/usr/local/lib/ -DPORTAUDIO=ON -DPORTAUDIO_LIB_PATH=/home/young/Downloads/_install/lib/libportaudio.a -DPORTAUDIO_INCLUDE_DIR=/home/young/Downloads/_install/include/
+//3.执行py脚本，填充json
+修改好Json
+python AuthServer/AuthServer.py  
+Open your favorite browser and navigate to: http://localhost:3000
+//4.再执行make
+make
+//5.测试应用
+cd /home/young/sugr/build/SampleApp/src
+TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+
+
+
+

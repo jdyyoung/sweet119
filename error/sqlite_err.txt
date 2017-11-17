@@ -1,0 +1,47 @@
+~/sugr/build/SampleApp/src$TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+Running app with log level: DEBUG9
+2017-11-14 14:20:39.463 [  1] I ConfigurationNode:initializeSuccess
+2017-11-14 14:20:39.467 [  1] 9 MediaPlayer:createCalled
+2017-11-14 14:20:39.502 [  1] 9 MediaPlayer:createCalled
+2017-11-14 14:20:39.503 [  1] 9 MediaPlayer:createCalled
+2017-11-14 14:20:39.511 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-14 14:20:39.512 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-14 14:20:39.512 [  1] 9 SpeechSynthesizer:addObserver:observer=0xc07558
+2017-11-14 14:20:39.512 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-14 14:20:39.512 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-14 14:20:39.513 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-14 14:20:39.513 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-14 14:20:39.514 [  1] 9 AlertScheduler:setTimerForNextAlertLocked
+2017-11-14 14:20:39.514 [  1] I AlertScheduler:executeScheduleNextAlertForRendering::no work to do.
+2017-11-14 14:20:39.515 [  3] 1 AlertsCapabilityAgent:executeOnConnectionStatusChanged:status=DISCONNECTED,reason=ACL_CLIENT_REQUEST
+2017-11-14 14:20:39.516 [  1] E SQLiteStatement:SQLiteStatement::constructorFailed::Could not create prepared statement.:rcode=1,error message=no such table\: settings
+2017-11-14 14:20:39.516 [  1] E SQLiteSettingsStorage:loadFailed:reason=SQliteStatementInvalid
+2017-11-14 14:20:39.516 [  1] E Settings:initializeFailed:reason=databaseReadFailed
+2017-11-14 14:20:39.516 [  1] E Settings:createFailed:reason=Initialization error.
+2017-11-14 14:20:39.516 [  1] E DefaultClient:initializeFailed:reason=unableToCreateSettingsObject
+2017-11-14 14:20:39.516 [  1] I DirectiveSequencer:doShutdown
+2017-11-14 14:20:39.518 [  1] 1 AudioPlayer:executeStop:playNextItem=false,m_currentActivity=IDLE
+2017-11-14 14:20:39.518 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-14 14:20:39.518 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-14 14:20:39.518 [  1] 0 ContextManager:setStateProvider:action=removedStateProvider,namespace=AudioPlayer,name=PlaybackState
+2017-11-14 14:20:39.518 [  1] 9 SpeechSynthesizer:doShutdown
+2017-11-14 14:20:39.518 [  1] 9 MediaPlayer:setObserverCalled
+2017-11-14 14:20:39.518 [  2] 0 MediaPlayer:handleSetObserverCalled
+2017-11-14 14:20:39.519 [  1] 9 AlertsCapabilityAgent:releaseChannel
+2017-11-14 14:20:39.520 [  4] I CertifiedSender:CertifiedSender worker thread done.  exiting mainloop.
+Failed to create default SDK client!
+2017-11-14 14:20:53.274 [  5] 0 HttpPost:doPostSucceeded:code=200
+2017-11-14 14:20:53.274 [  5] 0 AuthDelegate:handleLwaResponseSucceeded:expiresInSeconds=3600
+2017-11-14 14:20:53.274 [  5] 0 AuthDelegate:onAuthStateChangeCalled:state=1,error=0
+2017-11-14 14:20:53.277 [  1] 9 MediaPlayer:~MediaPlayerCalled
+2017-11-14 14:20:53.277 [  1] 9 MediaPlayer:resetPipeline
+2017-11-14 14:20:53.277 [  1] 9 MediaPlayer:~MediaPlayerCalled
+2017-11-14 14:20:53.278 [  1] 9 MediaPlayer:resetPipeline
+Failed to initialize SampleApplication
+Failed to create to SampleApplication!
+
+处理：
+在TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+执行时，Json文件填写的的数据库文件在指定的路径不存在的，在执行sampleapp应用时sqlite是从无到有的创建，
+所以删除指定路径下的数据库文件，再执行TZ=UTC ./SampleApp /home/young/sugr/build/Integration/AlexaClientSDKConfig.json  DEBUG9
+

@@ -1,0 +1,7 @@
+Security Profile ID:amzn1.application.8a01b8e549194c15931cc612f11d15a7
+
+Client ID:amzn1.application-oa2-client.26ff55eb4b874ba89a88208627bf97fc
+
+Client secret:62e59f175707fddebf032b063a9a1dfe3c294ad867fe1d8d1ecc082799b8ecdb
+
+https://young-amazon-developer.com/
