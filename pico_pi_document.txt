@@ -1,0 +1,13 @@
+//Development kit for Amazon AVS with Synaptics 2Mic and NXP PICO-PI-IMX7D.pdf
+
+
+3.亚马逊帐号设置
+4.软件设置
+  预先装了Yocto Linux image，可下载最新的Yocto Linux image镜像，重刷镜像看第5部分
+  
+  
+  21.
+  22.到路径下运行sample app
+  23.
+  24.
+  25.

@@ -1,0 +1,563 @@
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls
+imx_usb        imx_usb.conf        mx51_usb_work.conf  mx6_usb_work.conf
+imx_usb_32bit  mx50_usb_work.conf  mx53_usb_work.conf  mx7_usb_work.conf
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ sudo ./imx_usb ../pico-imx7d_bootbomb_20170112.imx 
+config file <./imx_usb.conf>
+vid=0x066f pid=0x3780 file_name=mx23_usb_work.conf
+vid=0x15a2 pid=0x004f file_name=mx28_usb_work.conf
+vid=0x15a2 pid=0x0052 file_name=mx50_usb_work.conf
+vid=0x15a2 pid=0x0054 file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x0061 file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x0063 file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x0071 file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x007d file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x0080 file_name=mx6_usb_work.conf
+vid=0x15a2 pid=0x0076 file_name=mx7_usb_work.conf
+vid=0x15a2 pid=0x0041 file_name=mx51_usb_work.conf
+vid=0x15a2 pid=0x004e file_name=mx53_usb_work.conf
+vid=0x15a2 pid=0x006a file_name=vybrid_usb_work.conf
+vid=0x066f pid=0x37ff file_name=linux_gadget.conf
+config file <./mx7_usb_work.conf>
+parse ./mx7_usb_work.conf
+15a2:0076(mx7) bConfigurationValue =1
+Interface 0 claimed
+HAB security state: development mode (0x56787856)
+== work item
+filename ../pico-imx7d_bootbomb_20170112.imx
+load_size 0 bytes
+load_addr 0x00000000
+dcd 1
+clear_dcd 0
+plug 1
+jump_mode 2
+jump_addr 0x00000000
+== end work item
+Setting boot_data_ptr to 0
+main dcd length 1b4
+sub dcd length 164
+sub dcd length c
+Check Data Command(10) success @307900c4=1e9 mask 1
+sub dcd length 34
+sub dcd length c
+Check Data Command(10) success @307a0004=1 mask 1
+
+loading binary file(../pico-imx7d_bootbomb_20170112.imx) to 877ff400, skip=0, fsize=259c00 type=aa
+
+<<<2464768, 2464768 bytes>>>
+succeeded (status 0x88888888)
+jumping to 0x877ff400
+
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17  567161856 sdb1
+   8       18  409598976 sdb2
+   8       32    3735552 sdc
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ 
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls
+imx_usb        imx_usb.conf        mx51_usb_work.conf  mx6_usb_work.conf
+imx_usb_32bit  mx50_usb_work.conf  mx53_usb_work.conf  mx7_usb_work.conf
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls ~/NXP/
+AlexaSDK-1.1_Conexant_Oct10_2017.sdcard
+demo_software
+development_resources
+document
+factory_default_reset
+fsl-yocto-L4.9.11_1.0.0
+fsl-yocto-L4.9.11_1.0.0.tar.gz
+mfgtools
+mfgtools.zip
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build.zip
+pico_pi_document.txt
+product_datasheets
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ pv
+程序“pv”尚未安装。 您可以使用以下命令安装：
+sudo apt install pv
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ sudo apt install pv
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+下列【新】软件包将被安装：
+  pv
+升级了 0 个软件包，新安装了 1 个软件包，要卸载 0 个软件包，有 285 个软件包未被升级。
+需要下载 46.8 kB 的归档。
+解压缩后会消耗 170 kB 的额外空间。
+获取:1 http://cn.archive.ubuntu.com/ubuntu xenial/universe amd64 pv amd64 1.6.0-1 [46.8 kB]
+已下载 46.8 kB，耗时 0秒 (446 kB/s)
+正在选中未选择的软件包 pv。
+(正在读取数据库 ... 系统当前共安装有 216712 个文件和目录。)
+正准备解包 .../archives/pv_1.6.0-1_amd64.deb  ...
+正在解包 pv (1.6.0-1) ...
+正在处理用于 man-db (2.7.5-1) 的触发器 ...
+正在设置 pv (1.6.0-1) ...
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ pv -v
+pv：无效选项 -- v
+Try `pv --help' for more information.
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ pv --help
+Usage: pv [OPTION] [FILE]...
+Concatenate FILE(s), or standard input, to standard output,
+with monitoring.
+
+  -p, --progress           show progress bar
+  -t, --timer              show elapsed time
+  -e, --eta                show estimated time of arrival (completion)
+  -I, --fineta             show absolute estimated time of arrival 
+                           (completion)
+  -r, --rate               show data transfer rate counter
+  -a, --average-rate       show data transfer average rate counter
+  -b, --bytes              show number of bytes transferred
+  -T, --buffer-percent     show percentage of transfer buffer in use
+  -A, --last-written NUM   show NUM bytes last written
+  -F, --format FORMAT      set output format to FORMAT
+  -n, --numeric            output percentages, not visual information
+  -q, --quiet              do not output any transfer information at all
+
+  -W, --wait               display nothing until first byte transferred
+  -D, --delay-start SEC    display nothing until SEC seconds have passed
+  -s, --size SIZE          set estimated data size to SIZE bytes
+  -l, --line-mode          count lines instead of bytes
+  -0, --null               lines are null-terminated
+  -i, --interval SEC       update every SEC seconds
+  -w, --width WIDTH        assume terminal is WIDTH characters wide
+  -H, --height HEIGHT      assume terminal is HEIGHT rows high
+  -N, --name NAME          prefix visual information with NAME
+  -f, --force              output even if standard error is not a terminal
+  -c, --cursor             use cursor positioning escape sequences
+
+  -L, --rate-limit RATE    limit transfer to RATE bytes per second
+  -B, --buffer-size BYTES  use a buffer size of BYTES
+  -C, --no-splice          never use splice(), always use read/write
+  -E, --skip-errors        skip read errors in input
+  -S, --stop-at-size       stop after --size bytes have been transferred
+  -R, --remote PID         update settings of process PID
+
+  -P, --pidfile FILE       save process ID in FILE
+
+  -d, --watchfd PID[:FD]   watch file FD opened by process PID
+
+  -h, --help               show this help and exit
+  -V, --version            show version information and exit
+
+Please report any bugs to <pv@ivarch.com>.
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ pv --version
+pv 1.6.0 - Copyright 2015 Andrew Wood <andrew.wood@ivarch.com>
+
+Web site: http://www.ivarch.com/programs/pv.shtml
+
+This program is free software, and is being distributed under the
+terms of the Artistic License 2.0.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ 
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls
+imx_usb        imx_usb.conf        mx51_usb_work.conf  mx6_usb_work.conf
+imx_usb_32bit  mx50_usb_work.conf  mx53_usb_work.conf  mx7_usb_work.conf
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls
+imx_usb        imx_usb.conf        mx51_usb_work.conf  mx6_usb_work.conf
+imx_usb_32bit  mx50_usb_work.conf  mx53_usb_work.conf  mx7_usb_work.conf
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ ls ~/NXP/
+AlexaSDK-1.1_Conexant_Oct10_2017.sdcard
+demo_software
+development_resources
+document
+factory_default_reset
+fsl-yocto-L4.9.11_1.0.0
+fsl-yocto-L4.9.11_1.0.0.tar.gz
+mfgtools
+mfgtools.zip
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build.zip
+pico_pi_document.txt
+product_datasheets
+~/NXP/development_resources/development_tools/installer/pico-imx7-imx6ul-imx6ull_otg-installer_20170112/linux$ cd 
+~$ cd NXP/
+~/NXP$ ls
+AlexaSDK-1.1_Conexant_Oct10_2017.sdcard
+demo_software
+development_resources
+document
+factory_default_reset
+fsl-yocto-L4.9.11_1.0.0
+fsl-yocto-L4.9.11_1.0.0.tar.gz
+mfgtools
+mfgtools.zip
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build.zip
+pico_pi_document.txt
+product_datasheets
+~/NXP$ pv $AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+pv：无效选项 -- 1
+Try `pv --help' for more information.
+记录了0+0 的读入
+记录了0+0 的写出
+0 bytes copied, 8.8853e-05 s, 0.0 kB/s
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+3.56GiB 0:00:24 [ 147MiB/s] [================================>] 100%            
+记录了0+46193 的读入
+记录了0+46193 的写出
+3825205248 bytes (3.8 GB, 3.6 GiB) copied, 32.5145 s, 118 MB/s
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb1 bs=1M && sync
+dd: 写入'/dev/sdb1' 出错: 设备上没有空间
+记录了0+112 的读入
+记录了0+111 的写出
+8388608 bytes (8.4 MB, 8.0 MiB) copied, 0.103695 s, 80.9 MB/s
+8.12MiB 0:00:00 [67.8MiB/s] [>                                 ]  0%            
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+   8       32    3735552 sdc
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb^Cs=1M && sync
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb0 bs=1M && sync
+[sudo] young 的密码： 
+3.56GiB 0:00:10 [ 342MiB/s] [================================>] 100%            
+记录了0+52693 的读入
+记录了0+52693 的写出
+3825205248 bytes (3.8 GB, 3.6 GiB) copied, 7.28932 s, 525 MB/s
+~/NXP$ ls
+AlexaSDK-1.1_Conexant_Oct10_2017.sdcard
+demo_software
+development_resources
+document
+factory_default_reset
+fsl-yocto-L4.9.11_1.0.0
+fsl-yocto-L4.9.11_1.0.0.tar.gz
+mfgtools
+mfgtools.zip
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build
+NxpAT_NXP_Pico_i.MX7D_0_OIR1.170720.018_userdebug_build.zip
+pico_pi_document.txt
+product_datasheets
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+3.56GiB 0:00:29 [ 124MiB/s] [================================>] 100%            
+记录了0+42102 的读入
+记录了0+42102 的写出
+3825205248 bytes (3.8 GB, 3.6 GiB) copied, 31.5641 s, 121 MB/s
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+~/NXP$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0 230.8G  0 part /
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0   7.7G  0 part [SWAP]
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0     8M  0 part /media/young/Boot imx7d-
+└─sdb2   8:18   0   3.2G  0 part /media/young/04502642-afba-4f86-ac69-5f0e795152
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+~/NXP$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0 230.8G  0 part /
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0   7.7G  0 part [SWAP]
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0     8M  0 part /media/young/Boot imx7d-
+└─sdb2   8:18   0   3.2G  0 part /media/young/04502642-afba-4f86-ac69-5f0e795152
+~/NXP$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0 230.8G  0 part /
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0   7.7G  0 part [SWAP]
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0     8M  0 part /media/young/Boot imx7d-
+└─sdb2   8:18   0   3.2G  0 part /media/young/04502642-afba-4f86-ac69-5f0e795152
+~/NXP$ lsblk
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda      8:0    0 238.5G  0 disk 
+├─sda1   8:1    0 230.8G  0 part /
+├─sda2   8:2    0     1K  0 part 
+└─sda5   8:5    0   7.7G  0 part [SWAP]
+sdb      8:16   0 931.5G  0 disk 
+├─sdb1   8:17   0     8M  0 part /media/young/Boot imx7d-
+└─sdb2   8:18   0   3.2G  0 part /media/young/04502642-afba-4f86-ac69-5f0e795152
+~/NXP$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb1 bs=1M && sync
+dd: 写入'/dev/sdb1' 出错: 设备上没有空间
+记录了0+119 的读入
+记录了0+118 的写出
+8388608 bytes (8.4 MB, 8.0 MiB) copied, 0.0174613 s, 480 MB/s
+8.12MiB 0:00:00 [ 269MiB/s] [>                                 ]  0%            
+~/NXP$ 
+~/NXP$ 
+~/NXP$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=3927488k,nr_inodes=981872,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=789428k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=789428k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/sdb2 on /media/young/04502642-afba-4f86-ac69-5f0e7951529e type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+/dev/sdb1 on /media/young/Boot imx7d- type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+~/NXP$ 
+~/NXP$ 
+~/NXP$ df -h
+文件系统        容量  已用  可用 已用% 挂载点
+udev            3.8G  3.6G  188M   96% /dev
+tmpfs           771M  9.4M  762M    2% /run
+/dev/sda1       227G   29G  187G   14% /
+tmpfs           3.8G  124M  3.7G    4% /dev/shm
+tmpfs           5.0M  8.0K  5.0M    1% /run/lock
+tmpfs           3.8G     0  3.8G    0% /sys/fs/cgroup
+tmpfs           771M   68K  771M    1% /run/user/1000
+/dev/sdb2       3.0G  1.8G  1.1G   64% /media/young/04502642-afba-4f86-ac69-5f0e7951529e
+/dev/sdb1       8.0M  5.6M  2.5M   70% /media/young/Boot imx7d-
+~/NXP$ 
+~/NXP$ 
+~/NXP$ 
+~/NXP$ sudo apt-get install gparted
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+将会同时安装下列软件：
+  libgtkmm-2.4-1v5 libparted-fs-resize0
+建议安装：
+  xfsprogs reiserfsprogs reiser4progs jfsutils yelp kpartx dmraid dmsetup
+  gpart libparted-dev
+下列【新】软件包将被安装：
+  gparted libgtkmm-2.4-1v5 libparted-fs-resize0
+升级了 0 个软件包，新安装了 3 个软件包，要卸载 0 个软件包，有 285 个软件包未被升级。
+需要下载 1,129 kB 的归档。
+解压缩后会消耗 6,973 kB 的额外空间。
+您希望继续执行吗？ [Y/n] 
+获取:1 http://cn.archive.ubuntu.com/ubuntu xenial/main amd64 libgtkmm-2.4-1v5 amd64 1:2.24.4-2 [671 kB]
+获取:2 http://cn.archive.ubuntu.com/ubuntu xenial/main amd64 libparted-fs-resize0 amd64 3.2-15 [46.4 kB]
+获取:3 http://cn.archive.ubuntu.com/ubuntu xenial/main amd64 gparted amd64 0.25.0-1 [411 kB]
+已下载 1,129 kB，耗时 1秒 (1,035 kB/s)
+正在选中未选择的软件包 libgtkmm-2.4-1v5:amd64。
+(正在读取数据库 ... 系统当前共安装有 216724 个文件和目录。)
+正准备解包 .../libgtkmm-2.4-1v5_1%3a2.24.4-2_amd64.deb  ...
+正在解包 libgtkmm-2.4-1v5:amd64 (1:2.24.4-2) ...
+正在选中未选择的软件包 libparted-fs-resize0:amd64。
+正准备解包 .../libparted-fs-resize0_3.2-15_amd64.deb  ...
+正在解包 libparted-fs-resize0:amd64 (3.2-15) ...
+正在选中未选择的软件包 gparted。
+正准备解包 .../gparted_0.25.0-1_amd64.deb  ...
+正在解包 gparted (0.25.0-1) ...
+正在处理用于 libc-bin (2.23-0ubuntu9) 的触发器 ...
+正在处理用于 gnome-menus (3.13.3-6ubuntu3.1) 的触发器 ...
+正在处理用于 desktop-file-utils (0.22-1ubuntu5) 的触发器 ...
+正在处理用于 bamfdaemon (0.5.3~bzr0+16.04.20160701-0ubuntu1) 的触发器 ...
+Rebuilding /usr/share/applications/bamf-2.index...
+正在处理用于 mime-support (3.59ubuntu1) 的触发器 ...
+正在处理用于 hicolor-icon-theme (0.15-0ubuntu1) 的触发器 ...
+正在处理用于 man-db (2.7.5-1) 的触发器 ...
+正在设置 libgtkmm-2.4-1v5:amd64 (1:2.24.4-2) ...
+正在设置 libparted-fs-resize0:amd64 (3.2-15) ...
+正在设置 gparted (0.25.0-1) ...
+正在处理用于 libc-bin (2.23-0ubuntu9) 的触发器 ...
+~/NXP$ 
+~/NXP$ 
+~/NXP$ sudo gparted
+======================
+libparted : 3.2
+======================
+
+
+//-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+~/NXP$ 
+~/NXP$ 
+~/NXP$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=3927488k,nr_inodes=981872,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=789428k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=789428k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/sdb2 on /media/young/04502642-afba-4f86-ac69-5f0e7951529e type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+/dev/sdb1 on /media/young/Boot imx7d- type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+~/NXP$ 
+~/NXP$ 
+~/NXP$ mount | grep home
+~/NXP$ 
+~/NXP$ 
+~/NXP$ sudo minicomc^C
+~/NXP$ df -h
+文件系统        容量  已用  可用 已用% 挂载点
+udev            3.8G  3.6G  188M   96% /dev
+tmpfs           771M  9.4M  762M    2% /run
+/dev/sda1       227G   29G  187G   14% /
+tmpfs           3.8G  124M  3.7G    4% /dev/shm
+tmpfs           5.0M  8.0K  5.0M    1% /run/lock
+tmpfs           3.8G     0  3.8G    0% /sys/fs/cgroup
+tmpfs           771M   68K  771M    1% /run/user/1000
+/dev/sdb2       3.0G  1.8G  1.1G   64% /media/young/04502642-afba-4f86-ac69-5f0e7951529e
+/dev/sdb1       8.0M  5.6M  2.5M   70% /media/young/Boot imx7d-
+~/NXP$ vi /etc/fstab 
+~/NXP$ mount
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=3927488k,nr_inodes=981872,mode=755)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,noexec,relatime,size=789428k,mode=755)
+/dev/sda1 on / type ext4 (rw,relatime,errors=remount-ro,data=ordered)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k)
+tmpfs on /sys/fs/cgroup type tmpfs (ro,nosuid,nodev,noexec,mode=755)
+cgroup on /sys/fs/cgroup/systemd type cgroup (rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+cgroup on /sys/fs/cgroup/hugetlb type cgroup (rw,nosuid,nodev,noexec,relatime,hugetlb)
+cgroup on /sys/fs/cgroup/net_cls,net_prio type cgroup (rw,nosuid,nodev,noexec,relatime,net_cls,net_prio)
+cgroup on /sys/fs/cgroup/pids type cgroup (rw,nosuid,nodev,noexec,relatime,pids)
+cgroup on /sys/fs/cgroup/cpu,cpuacct type cgroup (rw,nosuid,nodev,noexec,relatime,cpu,cpuacct)
+cgroup on /sys/fs/cgroup/devices type cgroup (rw,nosuid,nodev,noexec,relatime,devices)
+cgroup on /sys/fs/cgroup/perf_event type cgroup (rw,nosuid,nodev,noexec,relatime,perf_event)
+cgroup on /sys/fs/cgroup/blkio type cgroup (rw,nosuid,nodev,noexec,relatime,blkio)
+cgroup on /sys/fs/cgroup/cpuset type cgroup (rw,nosuid,nodev,noexec,relatime,cpuset)
+cgroup on /sys/fs/cgroup/freezer type cgroup (rw,nosuid,nodev,noexec,relatime,freezer)
+cgroup on /sys/fs/cgroup/memory type cgroup (rw,nosuid,nodev,noexec,relatime,memory)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=31,pgrp=1,timeout=0,minproto=5,maxproto=5,direct)
+debugfs on /sys/kernel/debug type debugfs (rw,relatime)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime)
+mqueue on /dev/mqueue type mqueue (rw,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,relatime)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,relatime)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=789428k,mode=700,uid=1000,gid=1000)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+/dev/sdb2 on /media/young/04502642-afba-4f86-ac69-5f0e7951529e type ext4 (rw,nosuid,nodev,relatime,data=ordered,uhelper=udisks2)
+/dev/sdb1 on /media/young/Boot imx7d- type vfat (rw,nosuid,nodev,relatime,uid=1000,gid=1000,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,showexec,utf8,flush,errors=remount-ro,uhelper=udisks2)
+~/NXP$ df -h
+文件系统        容量  已用  可用 已用% 挂载点
+udev            3.8G  3.6G  188M   96% /dev
+tmpfs           771M  9.4M  762M    2% /run
+/dev/sda1       227G   29G  187G   14% /
+tmpfs           3.8G  124M  3.7G    4% /dev/shm
+tmpfs           5.0M  8.0K  5.0M    1% /run/lock
+tmpfs           3.8G     0  3.8G    0% /sys/fs/cgroup
+tmpfs           771M   80K  771M    1% /run/user/1000
+/dev/sdb1       8.0M  5.6M  2.5M   70% /media/young/Boot imx7d-
+/dev/sdb3       914G   72M  868G    1% /media/young/b662a3d9-a8ca-4e0d-8a3b-6effe038f187
+/dev/sdb2       3.0G  1.8G  1.1G   64% /media/young/04502642-afba-4f86-ac69-5f0e7951529e
+~/NXP$ 
+

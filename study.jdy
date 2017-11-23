@@ -1,0 +1,33 @@
+pkg-config的学习：
+详解 pkg-config 作用 - CSDN博客
+http://blog.csdn.net/linux7985/article/details/6005267
+
+
+//------------------------------------apt-cache---------------------------------------------
+apt-cache的学习：
+linux中apt-cache命令的用法 - CSDN博客
+http://blog.csdn.net/supenman_mwg/article/details/23252251
+
+//--------------------------------20171123-------------------------------------------------
+关于dd命令的严重性！！！pv工具用法？要意识到对磁盘操作的严重性，慎重操作！！！
+事故经过:
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb1 bs=1M && sync
+
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb0 bs=1M && sync
+
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb bs=1M && sync
+
+~/NXP$ pv AlexaSDK-1.1_Conexant_Oct10_2017.sdcard|sudo dd of=/dev/sdb1 bs=1M && sync
+
+
+
+Gparted工具的认识应用？
+怎么分盘？？
+
+如何修改/etc/fstab，即使系统崩溃，home目录的资料还存在，怎么挂载？怎么备份快照？
+对/etc/fatab的学习？
+对/proc/partitions 的学习？
+
+
