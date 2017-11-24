@@ -26,8 +26,207 @@ http://blog.csdn.net/supenman_mwg/article/details/23252251
 Gparted工具的认识应用？
 怎么分盘？？
 
+//-----------------------------------------------------------------------------------
 如何修改/etc/fstab，即使系统崩溃，home目录的资料还存在，怎么挂载？怎么备份快照？
-对/etc/fatab的学习？
+对/etc/fstab的学习？
+
+---------------------------------------------------------------------------
 对/proc/partitions 的学习？
+
+~$ cat /proc/partitions 
+major minor  #blocks  name
+
+   8        0  250059096 sda
+   8        1  241951744 sda1
+   8        2          1 sda2
+   8        5    8104960 sda5
+   8       16  976762584 sdb
+   8       17       8192 sdb1
+   8       18    3334144 sdb2
+   8       19  973415424 sdb3
+   8       32    7865344 sdc
+   8       33    7834624 sdc1
+~$ 
+//major 主设备号。
+
+//用途：观察硬盘之实体使用情形与分割硬盘用
+//用法：在 console 上输入 fdisk -l /dev/sda ，观察硬盘之实体使用情形。
+sudo fdisk -l
+
+df  //用途：显示档案系统的状况，或是看所有档案系统的状况(预设值)
+du
+cat /proc/partitions  //查看proc/partitions 为linux 记录的分区信息
+
+//-------------------------------20171124------------------------------------------------------------
+repo的学习？
+
+buildroot的学习？
+连续两次返回上一层。
+
+Buildroot制作根文件系统过程（基于MYD-AM335X开发板） - ARM嵌入式 - 米尔科技论坛
+http://www.myir-tech.com/bbs/thread-7134-1-1.html
+快速应用：
+
+1、进入Target options  --->选项，设置目标架构。AM335x的CPU基于ARM的cortex-A8，为了使文件系统充分利用其硬件浮点特性，Target ABI选项中选上EABIhf，当然这还要取决于所使用的交叉编译工具是否支持该EABIhf，比较旧的交叉编译工具可能不支持。
+
+Target options  --->
+        Target Architecture (ARM (little endian))  --->          Target Architecture Variant (cortex-A8)  ---> 
+        Target ABI (EABIhf)  --->  
+        Floating point strategy (VFPv3-D16)  --->  
+        ARM instruction set (ARM)  ---> 
+
+2、设置编译文件系统所用的交叉编译工具。可以采用已存在的或着buildroot在编译过程中自己制作的交叉编译工具，为了缩短编译时间，这里采用已存在的交叉编译工具。
+进入Toolchain选项：
+Toolchain  --->
+        Toolchain type (External toolchain)  --->     （设定采用自己定义的交叉编译工具）
+        Toolchain (Custom toolchain)  --->
+        Toolchain origin (Pre-installed toolchain)  --->
+        (/opt/gcc-linaro-arm-linux-gnueabihf-4.7-2013.04-20130415_linux) Toolchain path         （设定自定义交叉编译工具的路径）
+        (arm-linux-gnueabihf) Toolchain prefix        （设置toolchain的前缀）
+        External toolchain kernel headers series (3.2.x)  --->    （最好选用与平台所用的linux版本一致的headers，具体还要看交叉编译工具是否支持）
+        External toolchain C library (glibc/eglibc)  --->       （选择自定义交叉编译工具所用的C库）
+        
+Toolchain has C++ support? 
+3、系统配置，特别要注意的是要根据特定平台选用正确的TTY port。
+System configuration  --->       
+        
+Run a getty (login prompt) after boot        
+                getty options  --->
+                            (ttyO0) TTY port                  （设置成debug串口的设备节点）
+                                          Baudrate (115200)  --->
+                            (vt100) TERM environment variable
+
+4、Target packages  ---> ：     按自己需求增加或裁剪Target packages，里面包含了很多常用的库和工具，包括常用的busybox的选用、音频、网络等。由于选项很多，这里不一一列出，可以参考附件中.config文件的配置，总之一切都是按自己需求来配置。
+
+
+5、设置目标文件系统的类型、压缩包格式等。
+Filesystem images  --->
+        
+tar the root filesystem
+                      Compression method (bzip2)  --->
+
+说明：这里没设置目标文件系统类型（比如板子上用的是ubi文件系统）是因为我只想要生成的压缩包，后续再用ubi工具制作成ubi文件系统镜像，当然也是完全可以在[ ] ubifs root filesystem选项中配置的，效果是一样的。
+
+
+6、配置busybox。
+前提是Target packages  --->选项中已经选用了busybox，默认是选上的。若里面没有自己想要的版本，也可自己去下载源码编译。
+配置busybox的命令是：
+$ make busybox-menuconfig
+这个也是按自己需求增加与裁剪。
+
+7、关于Kernel  --->和Bootloaders  --->选项，如果不用buildroot构建bootloader和linux内核可不必设置。
+
+8、保存配置退出后，执行make编译。编译过程中要联网，因为可能需要下载一些packages。
+
+
+9、编译完成后会在output/images/目录中生成目标文件系统压缩包rootfs.tar.bz2，后续可根据所需的文件系统类型用相关的工具进一步制作成可烧录到开发板的镜像。如果在Filesystem images 选项中配置好目标文件系统类型则直接生产可烧录的镜像。
+
+----------------------------------------------------------------------------
+buildroot使用详解 - 卧似长剑 - 博客园
+https://www.cnblogs.com/chencanjian/p/6060448.html
+
+
+进入System configuration
+在system hostname一栏中输入开发板的名称，如ZHD-A5，在system banner中可输入欢迎语，如welcome to Hi-Target
+
+在Init system中选择BusyBox，在/dev management中选择Dynamic using mdev，即使用mdev动态加载设备节点的方式
+然后在Path to thepermission tables中选择设备节点的配置表，这里我们一定要选择system/device_table_dev.txt，否则后面在dev目录下将不会生成各种设备节点。！！！！
+当然我们也可以手动的配置该文件，添加必要的节点或删除不需要的节点。
+
+Root password为配置进入linux控制台终端后的密码，为空则登录时不需要密码，默认登录用户名为root。
+
+选中Run agetty(login prompt)after boot。Remount root filesystem read-write during boot表示可以进行动态的挂载；
+再进入下面的getty options选项：
+	将TTY port配置为ttyS0，将baudrate配置为115200，对应开发板的打印串口。
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+进入target packages：
+在target packages目录下，有一大堆第三方的开源工具软件，基本上嵌入式上可能会用到得或用不到的，在这里都用，如果你想要把这个工具软件包含进固件里面，很简单，只要在这个软件的名称前面打个*星号，表示要编译这个软件到固件里面。
+
+//--------------------------------------------ldd shell 命令------------------------------------------------------------------------------------
+ldd application_path/executable查看可执行文件的动态链接库
+
+ldd命令编程开发 ldd命令用于打印程序或者库文件所依赖的共享库列表。
+来自: http://man.linuxde.net/ldd
+//=========================执行make busybox-menuconfig出错================================================
+~/buildroot-2017.08.1$ make busybox-menuconfig
+/usr/bin/cmake: /usr/local/lib/libcurl.so.4: no version information available (required by /usr/bin/cmake)
+
+You seem to have the current working directory in your
+PATH environment variable. This doesn't work.
+support/dependencies/dependencies.mk:22: recipe for target 'core-dependencies' failed
+make[1]: *** [core-dependencies] Error 1
+Makefile:79: recipe for target '_all' failed
+make: *** [_all] Error 2
+~/buildroot-2017.08.1$ 
+
+处理1：
+~/buildroot-2017.08.1$ which cmake
+/usr/bin/cmake
+~/buildroot-2017.08.1$ whereis cmake
+cmake: /usr/bin/cmake /usr/share/man/man1/cmake.1.gz
+~/buildroot-2017.08.1$ sudo ln -s /usr/bin/cmake /usr/local/bin/cmake                //如何恢復之前的鏈接，？？？掉轉方向
+[sudo] young 的密码： 
+~/buildroot-2017.08.1$ 
+~/buildroot-2017.08.1$ make busybox-menuconfig
+/usr/local/bin/cmake: /usr/local/lib/libcurl.so.4: no version information available (required by /usr/local/bin/cmake)
+
+You seem to have the current working directory in your
+PATH environment variable. This doesn't work.
+support/dependencies/dependencies.mk:22: recipe for target 'core-dependencies' failed
+make[1]: *** [core-dependencies] Error 1
+Makefile:79: recipe for target '_all' failed
+make: *** [_all] Error 2
+~/buildroot-2017.08.1$ which cmake
+/usr/local/bin/cmake
+~/buildroot-2017.08.1$ 
+
+处理2： This doesn't work.
+support/dependencies/dependencies.mk:22: reci
+no version information available-li_xiqing-51CTO博客
+http://blog.51cto.com/cwind/711882
+
+Linux下 ln 命令详解 - 路人浅笑 - 博客园
+https://www.cnblogs.com/perfy/p/5164430.html
+
+
+~/buildroot-2017.08.1$ sudo ln -s  /usr/lib/x86_64-linux-gnu/libcurl.so.4  /usr/local/lib/libcurl.so.4 
+[sudo] young 的密码： 
+~/buildroot-2017.08.1$ sudo ln -s  /usr/lib/x86_64-linux-gnu/libcurl.so.4  /usr/local/lib/libcurl.so.4 
+~/buildroot-2017.08.1$ make
+
+You seem to have the current working directory in your
+LD_LIBRARY_PATH environment variable. This doesn't work.
+support/dependencies/dependencies.mk:22: recipe for target 'core-dependencies' failed
+make[1]: *** [core-dependencies] Error 1
+Makefile:79: recipe for target '_all' failed
+make: *** [_all] Error 2
+~/buildroot-2017.08.1$ echo $LD_LIBRARY_PATH 
+
+解决一个错误
+vi ~/.bashrc
+修改环境变量
+. ~/.bashrc
+关闭终端，再执行解决。。。。。。
+
+
+
+
+
+
+
+
+
+
+//=========================================ln 命令的学习======================================================================
+Linux下 ln 命令详解 - 路人浅笑 - 博客园
+https://www.cnblogs.com/perfy/p/5164430.html
+
+sudo ln -s 源文件 目标文件 
+//==========================================无法打开Ubuntu系统设置=======================================================
+
+
+//
+
 
 
